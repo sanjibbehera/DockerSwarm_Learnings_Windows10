@@ -10,7 +10,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0
 > docker-machine create --driver hyperv manager1  
 > docker-machine create --driver virtualbox manager1
 
-##### Once you execute the above command, make sure you trigger from Powershell or CMD as Administrator.  
+##### Make sure you trigger the above cmd from Powershell or CMD as Administrator or else the below error will come.  
 Running pre-create checks...  
 <b>Error with pre-create check: "Hyper-v commands have to be run as an Administrator"</b>
 
