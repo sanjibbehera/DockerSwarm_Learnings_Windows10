@@ -14,7 +14,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0
 Running pre-create checks...  
 <b>Error with pre-create check: "Hyper-v commands have to be run as an Administrator"</b>
 
-> <b>Make sure external vswitch is enabled, or else you may face the below issue.</b>  
+### Make sure external vswitch is enabled, or else you may face the below issue.  
 no External vswitch found. A valid vswitch must be available for this command to run.
 
 #### Create a virtual switch by using Windows PowerShell, if it is not available in your Windows.
