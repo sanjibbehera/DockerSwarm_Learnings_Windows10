@@ -7,8 +7,8 @@ C:\Windows\System32\WindowsPowerShell\v1.0
 
 > <b>executing docker-machine should be done in powershell admin mode or else the below error will come.  
  Below 2 options can be choosed to create Docker Hosts as per your environment<b>  
->> > docker-machine create --driver hyperv manager1  
->> > docker-machine create --driver virtualbox manager1
+> docker-machine create --driver hyperv manager1  
+> docker-machine create --driver virtualbox manager1
 
 ##### Once you execute the above command, make sure you trigger from Powershell or CMD as Administrator.  
 Running pre-create checks...  
@@ -19,14 +19,14 @@ no External vswitch found. A valid vswitch must be available for this command to
 
 #### Create a virtual switch by using Windows PowerShell, if it is not available in your Windows.
 
-> Find existing network adapters by running the Get-NetAdapter cmdlet.  
+> <b>Find existing network adapters by running the Get-NetAdapter cmdlet.</b>  
 --> Get-NetAdapter
 
-> Create a virtual switch by using the New-VMSwitch cmdlet.  
+> <b>Create a virtual switch by using the New-VMSwitch cmdlet.</b>  
 --> New-VMSwitch -name ExternalSwitch  -NetAdapterName Ethernet -AllowManagementOS $true
 
-> To create an internal switch, run the following command.  
+> <b>To create an internal switch, run the following command.</b>  
 --> New-VMSwitch -name InternalSwitch -SwitchType Internal
 
-> To create an private switch, run the following command.  
+> <b>To create an private switch, run the following command.</b>  
 --> New-VMSwitch -name PrivateSwitch -SwitchType Private
