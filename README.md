@@ -1,14 +1,21 @@
 # dockerswarmlearnings_windows10
 My experience with Docker Swarm.
 
--- powershell should be configured in PATH.
+> <b>powershell should be configured in PATH.</b>  
+Make sure the below PATH is configured in PATH Environment Variable.  
+C:\Windows\System32\WindowsPowerShell\v1.0
 
--- executing docker-machine shud b done in powershell admin mode.
-PS C:\docker_learnings\swarm> docker-machine create --driver hyperv manager1
-Running pre-create checks...
-Error with pre-create check: "Hyper-v commands have to be run as an Administrator"
+> <b>executing docker-machine should be done in powershell admin mode or else the below error will come.  
+ Below 2 options can be choosed to create Docker Hosts as per your environment<b>  
+>> C:\docker_learnings\swarm> docker-machine create --driver hyperv manager1  
+>> C:\docker_learnings\swarm> docker-machine create --driver virtualbox manager1
 
--- no External vswitch found. A valid vswitch must be available for this command to run.
+##### Once you execute the above command, make sure you trigger from Powershell or CMD as Administrator.  
+Running pre-create checks...  
+<b>Error with pre-create check: "Hyper-v commands have to be run as an Administrator"</b>
+
+> <b>Make sure external vswitch is enabled, or else you may face the below issue.</b>  
+no External vswitch found. A valid vswitch must be available for this command to run.
 
 Create a virtual switch by using Windows PowerShell.
 
