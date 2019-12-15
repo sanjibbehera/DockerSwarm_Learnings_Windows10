@@ -77,3 +77,7 @@ docker service create --replicas 5 -d -p 9090:80 --name webserver nginx
 
 #### Confirm the nginx services is running after sometime [you need to wait for sometime for the above service to run].
 ![alt text](https://github.com/sanjibbehera/DockerSwarm_Learnings_Windows10/blob/master/docker-swarm-service.JPG)
+
+
+#### Scaling up/down the no of application instances in Docker Swarm.
+docker service scale webserver=10
