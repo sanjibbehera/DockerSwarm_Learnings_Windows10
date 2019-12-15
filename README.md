@@ -52,4 +52,6 @@ docker-machine ssh manager2  ## ssh into the newly created manager
 docker swarm join-token manager   ## execute this command to generate a token from the actual manager.  
 docker swarm join --token <SWARM TOKEN ID GENERATED> <MANAGER IP>:2377
  
- 
+#### Details of the Docker Swarm Cluster can be found using the below command.
+> docker node ls  ## this command should be executed from the docker master host.
+
