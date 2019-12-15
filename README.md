@@ -30,3 +30,26 @@ no External vswitch found. A valid vswitch must be available for this command to
 
 > <b>To create an private switch, run the following command.</b>  
 --> New-VMSwitch -name PrivateSwitch -SwitchType Private
+
+#### Once the manager node is created, creae rest nodes as per your requirement.
+> docker-machine --debug create -d hyperv dockernode1  
+docker-machine --debug create -d hyperv dockernode2  
+docker-machine --debug create -d hyperv dockernode3
+
+#### Initialize Master node into Docker Swarm.
+> docker-machine ssh manager1  
+docker swarm init --advertise-addr <Manager1 IP>  
+<b>[You can find out the IP by the command: docker-machine ip manager1]</b>
+ 
+#### Join the worker nodes into Docker Swarm.
+> docker-machine ssh dockernode1  
+<b>docker swarm join --token <SWARM TOKEN ID GENERATED AFTER DOCKER SWARM MANAGER INITIALIZED> <MANAGER NODE IP>:2377</b>  
+[SAME SHOULD BE DONE FOR THE REST WORKER NODEs].
+ 
+### IF WE NEED ADDITONAL DOCKER SWARM MANAGER.
+> docker-machine --debug create -d hyper manager2  ## create an additional docker manager host.  
+docker-machine ssh manager2  ## ssh into the newly created manager  
+docker swarm join-token manager   ## execute this command to generate a token from the actual manager.  
+docker swarm join --token <SWARM TOKEN ID GENERATED> <MANAGER IP>:2377
+ 
+ 
