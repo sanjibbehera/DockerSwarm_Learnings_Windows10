@@ -55,3 +55,10 @@ docker swarm join --token <SWARM TOKEN ID GENERATED> <MANAGER IP>:2377
 #### Details of the Docker Swarm Cluster can be found using the below command.
 > docker node ls  ## this command should be executed from the docker master host.
 ![alt text](https://github.com/sanjibbehera/DockerSwarm_Learnings_Windows10/blob/master/swarm-cluster-info.JPG)
+
+
+#### Create service of images/applications etc in Docker Swarm Cluster using the below command.
+docker service create --replicas 5 -d -p 9090:80 --name webserver nginx
+
+#### Confirm the nginx services is running after sometime [you need to wait for sometime for the above service to run].
+
