@@ -46,12 +46,27 @@ docker swarm init --advertise-addr <Manager1 IP>
 <b>docker swarm join --token <SWARM TOKEN ID GENERATED AFTER DOCKER SWARM MANAGER INITIALIZED> <MANAGER NODE IP>:2377</b>  
 [SAME SHOULD BE DONE FOR THE REST WORKER NODEs].
  
-### IF WE NEED ADDITIONAL DOCKER SWARM MANAGER.
+### For Fault Tolerance for Docker Swarm Managers, we should have odd no of managers (5/7/9).
 > docker-machine --debug create -d hyper manager2  ## create an additional docker manager host.  
 docker-machine ssh manager2  ## ssh into the newly created manager  
 docker swarm join-token manager   ## execute this command to generate a token from the actual manager.  
 docker swarm join --token <SWARM TOKEN ID GENERATED> <MANAGER IP>:2377
- 
+
+> docker-machine --debug create -d hyper manager3  ## create an additional docker manager host.  
+docker-machine ssh manager3  ## ssh into the newly created manager  
+docker swarm join-token manager   ## execute this command to generate a token from the actual manager.  
+docker swarm join --token <SWARM TOKEN ID GENERATED> <MANAGER IP>:2377
+
+> docker-machine --debug create -d hyper manager4  ## create an additional docker manager host.  
+docker-machine ssh manager4  ## ssh into the newly created manager  
+docker swarm join-token manager   ## execute this command to generate a token from the actual manager.  
+docker swarm join --token <SWARM TOKEN ID GENERATED> <MANAGER IP>:2377
+
+> docker-machine --debug create -d hyper manager5  ## create an additional docker manager host.  
+docker-machine ssh manager5  ## ssh into the newly created manager  
+docker swarm join-token manager   ## execute this command to generate a token from the actual manager.  
+docker swarm join --token <SWARM TOKEN ID GENERATED> <MANAGER IP>:2377
+
 #### Details of the Docker Swarm Cluster can be found using the below command.
 > docker node ls  ## this command should be executed from the docker master host.
 ![alt text](https://github.com/sanjibbehera/DockerSwarm_Learnings_Windows10/blob/master/swarm-cluster-info.JPG)
