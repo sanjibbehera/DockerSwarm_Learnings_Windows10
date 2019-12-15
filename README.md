@@ -54,4 +54,4 @@ docker swarm join --token <SWARM TOKEN ID GENERATED> <MANAGER IP>:2377
  
 #### Details of the Docker Swarm Cluster can be found using the below command.
 > docker node ls  ## this command should be executed from the docker master host.
-
+![alt text](https://github.com/sanjibbehera/DockerSwarm_Learnings_Windows10/blob/master/swarm-cluster-info.JPG)
